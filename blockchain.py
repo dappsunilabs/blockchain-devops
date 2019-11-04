@@ -215,6 +215,13 @@ node_identifier = str(uuid4()).replace('-', '')
 # Instantiate the Blockchain
 blockchain = Blockchain()
 
+@app.route('/info', methods=['GET'])
+def chain_info():
+    response = {
+        'owner': 'DappsUni',
+        'User': 'Nilesh',
+    }
+    return jsonify(response), 200
 
 @app.route('/mine', methods=['GET'])
 def mine():
