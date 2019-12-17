@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chatbot dapps</title>
+
+        <script src="https://cdn.plot.ly/plotly-1.43.0.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/static/style.css">
+        <script  src="/static/jsonPath.js"></script>
+        <script  src="/static/bot.js"></script>
+
+    </head>
+    <body>
+        <!--use this instead of h3 div class="container"-->
+        <div class="container" id='botDiv' style='height: 38px; position: fixed; bottom: 23px;left: 28px; width: 280px; z-index: 1000; background-color: #fff'>
+
+        <!--div class="container" -->
+            <!--use this instead of h3 class='text-center'-->
+
+            <div class="row text-center" id='botTitleBar' style='border: 1px solid;height: 38px; width: 400px; position:fixed; cursor: pointer;border-color: red;background-color: red;'> Click To Open/Close Bot
+                
+                <div  style='background-color: yellow;border-color: red;'> 
+                <h3 id='botTitleBar2' class="text-center"><font color="black"> DappsUni Bot</font></h3>
+              </div> 
+
+            <!--h3 class='text-center'><font color='white'> DappsUni Bot</font></h3-->
+                ​
+                <div class="col-md-4 ">
+                    <div id="chatPanel" class="panel panel-info fixed-outline">
+                        <div class="panel-heading ">
+                            <strong><span class="glyphicon glyphicon-globe"></span> (You: Green / dapps Bot: White) </strong>
+                        </div>
+                        <div class="panel-body fixed-panel">
+                            <ul class="media-list">
+                            </ul>
+                        </div>
+                        <div class="panel-footer">
+                            <form method="post" id="chatbot-form">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Enter Message" name="messageText" id="messageText" autofocus/>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-info" type="button" id="chatbot-form-btn">Send</button>
+                                        <button class="btn btn-info" type="button" id="chatbot-form-btn-clear">Clear</button>
+                                        <button class="btn btn-info" type="button" id="chatbot-form-btn-voice">Voice</button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script>
+            var exports = {};
+            (function () {
+    var div = document.createElement("div");
+    document.getElementsByTagName('body')[0].appendChild(div);
+    //div.outerHTML = "<div id='botDiv' style='height: 38px; position: fixed; bottom: 0; z-index: 1000; background-color: #fff'><div id='botTitleBar' style='height: 38px; width: 400px; position:fixed; cursor: pointer;'></div><iframe width='400px' height='600px' src='http://bot.proxy.chainapp.live/'></iframe></div>"; 
+
+    //div.outerHTML = "<div id='botDiv' style='height: 38px; position: fixed; bottom: 0; z-index: 1000; background-color: #fff'><div id='botTitleBar' style='height: 38px; width: 400px; position:fixed; cursor: pointer;'></div><div><h3> hi</h3></div></div>"; 
+
+
+
+    document.querySelector('body').addEventListener('click', function (e) {
+        e.target.matches = e.target.matches || e.target.msMatchesSelector;
+        if (e.target.matches('#botTitleBar')||e.target.matches('#botTitleBar2') ) { 
+            var botDiv = document.querySelector('#botDiv'); 
+            botDiv.style.height = botDiv.style.height == '600px' ? '38px' : '600px';
+        };
+    });
+}());
+        </script>
+        <script src="https://unpkg.com/speech-to-text@0.7.4/lib/index.js"></script>
+
+    </body>
+</html>

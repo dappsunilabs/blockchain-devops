@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chatbot dapps</title>
+
+        <script src="https://cdn.plot.ly/plotly-1.43.0.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/static/style.css">
+        <script  src="/static/jsonPath.js"></script>
+        <script  src="/static/bot.js"></script>
+
+    </head>
+    <body>
+
+      <button id="chat" class="open-button" onclick="openForm()">Blockbot Chat</button>
+
+      <div class="chat-popup" id="myForm">
+      <div  class="form-container">
+      <h3 class='text-center'><font color='white'> DappsUni Bot</font></h3>
+      <div class="col-md-4 ">
+      <div id="chatPanel" class="panel panel-info fixed-outline">
+      <div class="panel-heading ">
+        <strong><span class="glyphicon glyphicon-globe"></span> (You: Green / dapps Bot: White) </strong>
+      </div>
+      <div class="panel-body fixed-panel">
+        <ul class="media-list"></ul>
+      </div>
+      <div class="panel-footer">
+      <form method="post" id="chatbot-form">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Enter Message" name="messageText" id="messageText" autofocus/>
+          <span class="input-group-btn">
+            <button class="btn btn-info" type="button" id="chatbot-form-btn">Send</button>
+            <button class="btn btn-info" type="button" id="chatbot-form-btn-clear">Clear</button>
+            <button class="btn btn-info" type="button" id="chatbot-form-btn-voice">Voice</button>
+            <button type="button" class="btn btn btn-info" onclick="closeForm()">Close</button>
+          </span>
+        </div>
+      </form>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+
+      <script>
+        function openForm() {
+  document.getElementById("myForm").style.display = "block";
+  document.getElementById("chat").style.display = "none";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+  document.getElementById("chat").style.display = "block";
+}
+            var exports = {};
+            (function () {
+                 
+
+    var div = document.createElement("div");
+    document.getElementsByTagName('body')[0].appendChild(div);
+
+    document.querySelector('body').addEventListener('click', function (e) {
+        e.target.matches = e.target.matches || e.target.msMatchesSelector;
+        if (e.target.matches('#botTitleBar')||e.target.matches('#botTitleBar2') ) { 
+            var botDiv = document.querySelector('#botDiv'); 
+            botDiv.style.height = botDiv.style.height == '600px' ? '38px' : '600px';
+        };
+    });
+}());
+        </script>
+        <script src="https://unpkg.com/speech-to-text@0.7.4/lib/index.js"></script>
+                <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
+
+    </body>
+</html>
